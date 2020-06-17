@@ -1,0 +1,70 @@
+/* Base Styles */
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 1em;
+    color: #585858;
+}
+
+p {
+    color: gray;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+}
+
+/* Card Styles */
+.card {
+    background: #fff;
+    border:  #E0E0E0 1px solid;
+    border-radius: 5px;
+    font-size: 0.64em;
+    padding: 10px;
+}
+
+
+
+/* For Modal Window */
+body {
+    position: relative;
+    padding: 20px;
+    background: #F8F8F8;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(100, 100, 100, 0.4)
+}
+
+.modal {
+    width: 375px;
+    margin: 15% auto auto;
+    text-align: center;
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
