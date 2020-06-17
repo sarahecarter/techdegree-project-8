@@ -65,7 +65,7 @@ function displayModal(index) {
             </div>
         </div>
     `;
-
+    
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
 }
