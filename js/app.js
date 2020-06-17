@@ -3,7 +3,7 @@ let employees = [];
 const urlAPI = 'https://randomuser.me/api/?results=12&nat=us&inc=name,location,email,dob,phone,picture&noinfo';
 const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
-const modalContainer = document.querySelector(".modal-container");
+const modalContainer = document.querySelector(".modal");
 const modalClose = document.querySelector(".modal-close");
 
 // Fetch Data from API
@@ -25,10 +25,10 @@ function displayEmployees(employeedata) {
     employees.forEach((employee, index) => {
         let name = employee.name;
         let email = employee.email;
-        let city = employee.city;
+        let city = employee.location.city;
         let picture = employee.picture;
 
-    employeeHTML =+ `
+    employeeHTML += `
         <div class="card" data-index="${index}">
             <img class="avatar" src="${picture.large}">
             <div class="text-container">
@@ -73,7 +73,7 @@ function displayModal(index) {
 // Event Listeners 
 gridContainer.addEventListener('click', e => {
     if (e.target !== gridContainer) {
-        const card = e.target.closest(".card");
+        const card = e.target.closest('.card');
         const index = card.getAttribute('data-index');
         displayModal(index);
     }
