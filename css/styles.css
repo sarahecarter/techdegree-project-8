@@ -32,6 +32,7 @@ p {
 .card:hover {
     box-shadow: 5px 5px 5px #E0E0E0;
     transform: scale(1.05);
+    cursor: pointer;
 }
 
 
