@@ -12,6 +12,10 @@ p {
     color: gray;
 }
 
+img {
+    border-radius: 50%;
+}
+
 /* Grid Layout */
 .grid-container {
     display: grid;
@@ -27,6 +31,8 @@ p {
     font-size: 0.64em;
     padding: 10px;
     transition: 0.5s;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .card:hover {

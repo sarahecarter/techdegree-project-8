@@ -43,7 +43,22 @@ function displayEmployees(employeedata) {
 
 // Create Display Modal Function
 function displayModal(index) {
-    let { name, dob, phone, email, location: {street, city, state, postcode} , picture } = employees[index];
+    let { 
+        name, 
+        dob, 
+        phone, 
+        email, 
+        location: { 
+            street,
+            city, 
+            state, 
+            postcode }, 
+        picture 
+    } = employees[index]  
+
+    console.log(employees[index]);
+
+
     const modalContainer = document.querySelector(".modal-content");
     let date = new Date(dob.date);
     let modalHTML = '';
@@ -56,7 +71,7 @@ function displayModal(index) {
             <p class="address">${city}</p>
             <hr />
             <p>${phone}</p>
-            <p class="address">${street}, ${state} ${postcode}</p>
+            <p class="address">${street.name} ${street.number}, ${state} ${postcode}</p>
             <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
         </div>
     `;
