@@ -3,7 +3,6 @@ let employees = [];
 const urlAPI = 'https://randomuser.me/api/?results=12&nat=us&inc=name,location,email,dob,phone,picture&noinfo';
 const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
-const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
 
 // Fetch Data from API
@@ -45,7 +44,7 @@ function displayEmployees(employeedata) {
 // Create Display Modal Function
 function displayModal(index) {
     let { name, dob, phone, email, location: { city, street, state, postcode}, picture } = employees[index];
-
+    const modalContainer = document.querySelector(".modal-content");
     let date = new Date(dob.date);
     let modalHTML = '';
 
