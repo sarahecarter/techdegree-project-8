@@ -43,7 +43,7 @@ function displayEmployees(employeedata) {
 
 // Create Display Modal Function
 function displayModal(index) {
-    let { name, dob, phone, email, location: { city, street, state, postcode}, picture } = employees[index];
+    let { name, dob, phone, email, location: {street, city, state, postcode} , picture } = employees[index];
     const modalContainer = document.querySelector(".modal-content");
     let date = new Date(dob.date);
     let modalHTML = '';
