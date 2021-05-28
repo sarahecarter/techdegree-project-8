@@ -56,7 +56,7 @@ function displayModal(index) {
         picture 
     } = employees[index]  
 
-    console.log(employees[index]);
+    
 
 
     const modalContainer = document.querySelector(".modal-content");
@@ -74,11 +74,41 @@ function displayModal(index) {
             <p class="address">${street.name} ${street.number}, ${state} ${postcode}</p>
             <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
         </div>
+        <button class="switch" id="last"><</button>
+        <button class="switch" id="next">></button>
     `;
 
     modalContainer.innerHTML = modalHTML;
     
     overlay.classList.remove("hidden");
+
+    let nextButton = document.getElementById('next');
+    let lastButton = document.getElementById('last');
+
+    //hide buttons if it is the first or last card
+    if (index > 10) {
+        nextButton.style.display = 'none';
+    }
+
+    if (index < 1) {
+        lastButton.style.display = 'none';
+    }
+
+    //next button event listener
+    nextButton.addEventListener('click', () => {
+        //add to index
+        index ++;
+        //display new index modal
+        displayModal(index);
+    })
+
+    //last button event listener
+    lastButton.addEventListener('click', () => {
+        //add to index
+        index --;
+        //display new index modal
+        displayModal(index);
+    })
     
 }
 
@@ -94,3 +124,5 @@ gridContainer.addEventListener('click', e => {
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
+
+//Search Functionality

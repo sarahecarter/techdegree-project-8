@@ -16,10 +16,23 @@ img {
     border-radius: 50%;
 }
 
+/* Header and input */
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 30%;
+    padding-left: 10px;
+}
+
 /* Grid Layout */
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(auto-fill, minmax(300px, auto));
     gap: 15px;
 }
 
@@ -50,7 +63,7 @@ body {
 }
 
 .overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -75,6 +88,27 @@ body {
     border: none;
     background: #fff;
     cursor: pointer;
+}
+
+.modal-close:focus {
+    outline: none;
+}
+
+.switch {
+    background: #585858;
+    color: white;
+    transition: all 0.2s;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.switch:focus {
+    outline: none;
+}
+
+.switch:hover {
+    color: #585858;
+    background: white;
 }
 
 .hidden {
