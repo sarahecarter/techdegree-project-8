@@ -126,3 +126,21 @@ modalClose.addEventListener('click', () => {
 });
 
 //Search Functionality
+let search = document.getElementById('search');
+
+search.addEventListener('keyup', (e) => {
+    let names = document.getElementsByClassName('name');
+    let namesArray = Array.from(names);
+    let searchValue = search.value.toLowerCase();
+    // let filteredNames = namesArray.filter(name => name.textContent.toLowerCase().includes(searchValue));
+    namesArray.forEach(name => {
+        let card = name.parentElement.parentElement;
+        if (name.textContent.toLowerCase().includes(searchValue)) {
+            card.style.display = "flex";
+        }
+        else {
+            card.style.display = "none";
+        }
+    })
+})
+
